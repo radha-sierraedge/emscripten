@@ -1378,6 +1378,8 @@ def phase_linker_setup(options, state, newargs):
   settings.SUPPORTS_PROMISE_ANY = feature_matrix.caniuse(feature_matrix.Feature.PROMISE_ANY)
   if not settings.BULK_MEMORY:
     settings.BULK_MEMORY = feature_matrix.caniuse(feature_matrix.Feature.BULK_MEMORY)
+  if not settings.WASM_BIGINT:
+    settings.WASM_BIGINT = feature_matrix.caniuse(feature_matrix.Feature.JS_BIGINT_INTEGRATION)
 
   if settings.AUDIO_WORKLET:
     if settings.AUDIO_WORKLET == 1:

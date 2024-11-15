@@ -12315,6 +12315,7 @@ Aborted(`Module.arguments` has been replaced by `arguments_` (the initial value 
     # plain -O0
     legalization_message = 'to disable int64 legalization (which requires changes after link) use -sWASM_BIGINT'
     fail([], legalization_message)
+    fail(['-sMIN_SAFARI_VERSION=140100'], legalization_message)
     # optimized builds even without legalization
     optimization_message = '-O2+ optimizations always require changes, build with -O0 or -O1 instead'
     fail(required_flags + ['-O2'], optimization_message)
